@@ -1,10 +1,8 @@
 package cl.techstore.techstore_api.service;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import cl.techstore.techstore_api.dto.ProductoDTO;
 import cl.techstore.techstore_api.model.Producto;
 import cl.techstore.techstore_api.repository.ProductoRepository;
@@ -16,7 +14,7 @@ public class ProductoService {
     private ProductoRepository productoRepository;
 
     public List<Producto> listarTodos() {
-        return productoRepository.findAll();
+    return productoRepository.findByActivoTrue();
     }
 
     public Producto crear(ProductoDTO dto) {
